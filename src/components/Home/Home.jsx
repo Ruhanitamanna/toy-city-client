@@ -1,9 +1,14 @@
 import React from "react";
+import Banner from "../Banner/Banner";
+import Gallery from "../Gallery/Gallery";
+import SubCategory from "../SubCategory/SubCategory";
 
 const Home = () => {
   return (
     <div>
-      <h1 className="text-6xl font-bold">Toy City</h1>
+      <Banner></Banner>
+      <Gallery></Gallery>
+      <SubCategory></SubCategory>
     </div>
   );
 };

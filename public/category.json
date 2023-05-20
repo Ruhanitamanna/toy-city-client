@@ -1,0 +1,62 @@
+ [
+        {
+          "img": "https://cdn.w600.comps.canstockphoto.com/panda-soft-toys-stock-photography_csp3720630.jpg",
+          "name": " Squeaky Panda ",
+          "price": 9.99,
+          "rating": 4.5,
+          "seller": "John Doe",
+          "availableQuantity": 10,
+          "description": "A fun and interactive squeaky toy for dogs."
+        },
+        {
+          "img": "https://cdn.w600.comps.canstockphoto.com/panda-pictures_csp1920228.jpg",
+          "name": "Fluffy Panda",
+          "price": 12.99,
+          "rating": 4.2,
+          "seller": "Jane Smith",
+          "availableQuantity": 5,
+          "description": "A soft and cuddly plush dog bone toy."
+        },
+      
+    
+   
+        {
+          "img": "https://cdn.w600.comps.canstockphoto.com/easter-bunny-toys-stock-images_csp1518675.jpg",
+          "name": "Rabbit Feather Teaser Wand",
+          "price": 6.99,
+          "rating": 4.8,
+          "seller": "Alice Johnson",
+          "availableQuantity": 8,
+          "description": "A wand toy with feathers for interactive play with cats."
+        },
+        {
+          "img": "https://cdn.w600.comps.canstockphoto.com/rabbit-toy-stock-photos_csp13945038.jpg",
+          "name": "Rabbit soft Toy",
+          "price": 4.99,
+          "rating": 4.3,
+          "seller": "Bob Williams",
+          "availableQuantity": 12,
+          "description": "A small catnip-filled mouse toy for cats to play with."
+        },
+      
+        {
+          "img": "https://cdn.w600.comps.canstockphoto.com/toys-two-teddy-bear-stock-photograph_csp1050719.jpg",
+          "name": "Teddy Bear  Swing",
+          "price": 14.99,
+          "rating": 4.6,
+          "seller": "Emily Davis",
+          "availableQuantity": 3,
+          "description": "A colorful swing toy for parrots to perch and play on."
+        },
+        {
+          "img": "https://cdn.w600.comps.canstockphoto.com/furry-teddy-bear-picture_csp5460937.jpg",
+          "name": "Teddy Bear Fluffy ",
+          "price": 8.99,
+          "rating": 4.1,
+          "seller": "David Wilson",
+          "availableQuantity": 6,
+          "description": "A realistic canary toy that chirps when pressed."
+        }
+      ]
+    
+  
