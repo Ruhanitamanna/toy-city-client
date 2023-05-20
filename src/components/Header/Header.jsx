@@ -59,7 +59,7 @@ const Header = () => {
         <Link to="/">
           <img className="w-10 rounded-full" src={logo} alt="" />
         </Link>
-        <h1 className="font-bold text-3xl">TOY CITY</h1>
+        <h1 className="font-bold text-3xl text-secondary">TOY CITY</h1>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -75,7 +75,7 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to="/login" className="btn">
+        <Link to="/login" className="btn btn-secondary">
           Log in
         </Link>
       </div>

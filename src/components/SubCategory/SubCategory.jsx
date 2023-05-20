@@ -18,7 +18,7 @@ const SubCategory = () => {
   return (
     <div className="m-8">
       <div className="text-center">
-        <h2 className="text-6xl font-bold">Sub Category</h2>
+        <h2 className="text-4xl font-bold">Sub Category</h2>
         <br />
         <p>Choose your type of toys from different categories</p>
       </div>
@@ -44,7 +44,7 @@ const SubCategory = () => {
                     <p>price: ${toy.price}</p>
                     <div className="card-actions">
                       <Link to="/addatoy/id">
-                        <button className="btn btn-primary">
+                        <button className="btn btn-secondary">
                           View Details
                         </button>
                       </Link>
@@ -69,7 +69,7 @@ const SubCategory = () => {
                     <p>price: ${toy.price}</p>
                     <div className="card-actions">
                       <Link to="/addatoy/id">
-                        <button className="btn btn-primary">
+                        <button className="btn btn-secondary">
                           View Details
                         </button>
                       </Link>
@@ -95,7 +95,7 @@ const SubCategory = () => {
                     <p>Ratings: {toy.rating}</p>
                     <div className="card-actions">
                       <Link to="/addatoy/id">
-                        <button className="btn btn-primary">
+                        <button className="btn btn-secondary">
                           View Details
                         </button>
                       </Link>

@@ -13,12 +13,12 @@ const Banner = () => {
         <div className="max-w-md">
           <h1 className="mb-5 text-5xl font-bold">
             Welcome to <br />
-            <span>TOY CITY</span>
+            <span className="text-secondary">TOY CITY</span>
           </h1>
           <p className="mb-5">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            Discover a captivating collection of toys carefully curated with
+            love and care. From classic favorites to the latest trends, we have
+            something for every child's unique interests and age group
           </p>
         </div>
       </div>

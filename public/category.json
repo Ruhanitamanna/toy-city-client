@@ -17,6 +17,15 @@
           "availableQuantity": 5,
           "description": "A soft and cuddly plush dog bone toy."
         },
+        { "new": "panda"
+          "img": "https://cdn.w600.comps.canstockphoto.com/soft-toy-panda-with-sunglasses-picture_csp1819097.jpg",
+          "name": "soft Panda toy withsun glass",
+          "price": 14.99,
+          "rating": 4.8,
+          "seller": "Jane Smith",
+          "availableQuantity": 7,
+          "description": "A soft and cuddly plush panda toy with sunglass."
+        },
       
     
    
