@@ -6,6 +6,7 @@ import Register from "../Register/Register";
 import Blog from "../Blog/Blog";
 import MyToys from "../MyToys/MyToys";
 import AddAToy from "../AddAToy/AddAToy";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "addatoy/:id",
         element: <AddAToy></AddAToy>,
+      },
+      {
+        path: "*",
+        element: <ErrorPage></ErrorPage>,
       },
     ],
   },
