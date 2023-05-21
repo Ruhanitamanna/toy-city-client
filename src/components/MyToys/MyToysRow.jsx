@@ -1,6 +1,6 @@
 import React from "react";
 
-const MyToysRow = ({ bookedToy }) => {
+const MyToysRow = ({ bookedToy, handleDelete }) => {
   const {
     sellername,
     email,
@@ -12,17 +12,6 @@ const MyToysRow = ({ bookedToy }) => {
     description,
     _id,
   } = bookedToy;
-
-  const handleDelete = (id) => {
-    const process = confirm("are you sure you want to delete");
-    if (proceed) {
-      fetch(``)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        });
-    }
-  };
 
   return (
     <div>

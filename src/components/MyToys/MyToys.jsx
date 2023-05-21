@@ -14,6 +14,26 @@ const MyToys = () => {
       .then((res) => res.json())
       .then((data) => setBookedToys(data));
   }, []);
+
+  const handleDelete = (id) => {
+    const proceed = confirm("are you sure you want to delete");
+    if (proceed) {
+      fetch(`http://localhost:5000/bookedToys${id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.deletedCount > 0) {
+            alert("Deleted Successfully");
+            const remaining = bookedToys.filter(
+              (bookedToy) => bookedToy._id !== id
+            );
+            setBookedToys(remaining);
+          }
+        });
+    }
+  };
   return (
     <div>
       <div className="overflow-x-auto w-full">
@@ -49,7 +69,11 @@ const MyToys = () => {
           </thead>
           <tbody>
             {bookedToys.map((bookedToy) => (
-              <MyToysRow key={bookedToy._id} bookedToy={bookedToy}></MyToysRow>
+              <MyToysRow
+                key={bookedToy._id}
+                bookedToy={bookedToy}
+                handleDelete={handleDelete}
+              ></MyToysRow>
             ))}
           </tbody>
         </table>
