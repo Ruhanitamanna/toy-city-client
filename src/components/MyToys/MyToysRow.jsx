@@ -1,6 +1,6 @@
 import React from "react";
 
-const MyToysRow = ({ bookedToy, handleDelete }) => {
+const MyToysRow = ({ bookedToy, handleDelete, handleConfirm }) => {
   const {
     sellername,
     email,
@@ -54,7 +54,12 @@ const MyToysRow = ({ bookedToy, handleDelete }) => {
         <td>{description.slice(0, 20)}</td>
 
         <th>
-          <button className="btn btn-ghost btn-xs">details</button>
+          <button
+            onClick={() => handleConfirm(_id)}
+            className="btn btn-ghost btn-xs"
+          >
+            Buy Now
+          </button>
         </th>
       </tr>
     </div>
