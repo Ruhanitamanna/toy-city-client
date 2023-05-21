@@ -1,12 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 
-import React from "react";
+import "react-tabs/style/react-tabs.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import AuthProvider, { AuthContext } from "../Providers/AuthProviders";
 
 const SubCategory = () => {
   const [toys, setToys] = useState([]);
+  const { user } = useContext(AuthContext);
+
+  //   console.log(user);
 
   useEffect(() => {
     fetch("http://localhost:5000/toys")
@@ -33,7 +38,7 @@ const SubCategory = () => {
           <div className="flex-none md:flex m-auto justify-around">
             {toys
               .filter((toy) => toy.name.toLowerCase().includes("panda"))
-              .slice(0, 2)
+              .slice(0, 3)
               .map((toy) => (
                 <div key={toy.name} className="card w-96 bg-base-100 shadow-xl">
                   <figure className="px-10 pt-10">
@@ -43,10 +48,21 @@ const SubCategory = () => {
                     <h2 className="card-title">{toy.name}</h2>
                     <p>price: ${toy.price}</p>
                     <div className="card-actions">
-                      <Link to="/addatoy/id">
-                        <button className="btn btn-secondary">
+                      <Link to={`addatoy/${toy._id}`}>
+                        <button
+                          className="btn btn-secondary"
+                          onClick={() => {
+                            if (user) {
+                              toast.success("Logged in! Viewing details...");
+                            } else {
+                              toast.error("Please login to view details.");
+                              history.push("/login"); // Redirect to the login page
+                            }
+                          }}
+                        >
                           View Details
                         </button>
+                        <ToastContainer />
                       </Link>
                     </div>
                   </div>
@@ -58,7 +74,7 @@ const SubCategory = () => {
           <div className="flex-none md:flex m-auto justify-around">
             {toys
               .filter((toy) => toy.name.toLowerCase().includes("rabbit"))
-              .slice(0, 2)
+              .slice(0, 3)
               .map((toy) => (
                 <div key={toy.name} className="card w-96 bg-base-100 shadow-xl">
                   <figure className="px-10 pt-10">
@@ -68,7 +84,7 @@ const SubCategory = () => {
                     <h2 className="card-title">{toy.name}</h2>
                     <p>price: ${toy.price}</p>
                     <div className="card-actions">
-                      <Link to="/addatoy/id">
+                      <Link to={`addatoy/${toy._id}`}>
                         <button className="btn btn-secondary">
                           View Details
                         </button>
@@ -83,7 +99,7 @@ const SubCategory = () => {
           <div className="flex-none md:flex m-auto justify-around">
             {toys
               .filter((toy) => toy.name.toLowerCase().includes("teddy bear"))
-              .slice(0, 2)
+              .slice(0, 3)
               .map((toy) => (
                 <div key={toy.name} className="card w-96 bg-base-100 shadow-xl">
                   <figure className="px-10 pt-10">
@@ -94,7 +110,7 @@ const SubCategory = () => {
                     <p>price: ${toy.price}</p>
                     <p>Ratings: {toy.rating}</p>
                     <div className="card-actions">
-                      <Link to="/addatoy/id">
+                      <Link to={`addatoy/${toy._id}`}>
                         <button className="btn btn-secondary">
                           View Details
                         </button>

@@ -5,8 +5,9 @@
           "price": 9.99,
           "rating": 4.5,
           "seller": "John Doe",
+          "subCategory":"panda",
           "availableQuantity": 10,
-          "description": "A fun and interactive squeaky toy for dogs."
+          "description": "The panda toy is a cute and cuddly stuffed animal resembling a panda bear. Made from soft and plush materials, it is perfect for hugging and snuggling. With its black and white fur, adorable face, and friendly expression, the panda toy is sure to capture the hearts of children and panda lovers alike."
         },
         {
           "img": "https://cdn.w600.comps.canstockphoto.com/panda-pictures_csp1920228.jpg",
@@ -14,17 +15,19 @@
           "price": 12.99,
           "rating": 4.2,
           "seller": "Jane Smith",
+          "subCategory":"panda",
           "availableQuantity": 5,
-          "description": "A soft and cuddly plush dog bone toy."
+          "description": "The panda toy is a cute and cuddly stuffed animal resembling a panda bear. Made from soft and plush materials, it is perfect for hugging and snuggling. With its black and white fur, adorable face, and friendly expression, the panda toy is sure to capture the hearts of children and panda lovers alike."
         },
-        { "new": "panda"
+        { "new": "panda",
           "img": "https://cdn.w600.comps.canstockphoto.com/soft-toy-panda-with-sunglasses-picture_csp1819097.jpg",
-          "name": "soft Panda toy withsun glass",
+          "name": "soft Panda toy with sun glass",
           "price": 14.99,
           "rating": 4.8,
           "seller": "Jane Smith",
+          "subCategory":"panda",
           "availableQuantity": 7,
-          "description": "A soft and cuddly plush panda toy with sunglass."
+          "description": "The panda toy is a cute and cuddly stuffed animal resembling a panda bear. Made from soft and plush materials, it is perfect for hugging and snuggling. With its black and white fur, adorable face, and friendly expression, the panda toy is sure to capture the hearts of children and panda lovers alike."
         },
       
     
@@ -35,8 +38,9 @@
           "price": 6.99,
           "rating": 4.8,
           "seller": "Alice Johnson",
+          "subCategory":"Rabbit",
           "availableQuantity": 8,
-          "description": "A wand toy with feathers for interactive play with cats."
+          "description": "The rabbit toy is an adorable plush toy that resembles a fluffy and lovable bunny. With its long ears, soft fur, and charming features, the rabbit toy is incredibly huggable and delightful. It offers a sense of warmth and comfort, making it an ideal companion for children. Whether it's for pretend tea parties, imaginative adventures, or simply cuddling up, the rabbit toy adds a touch of whimsy and playfulness to any child's day."
         },
         {
           "img": "https://cdn.w600.comps.canstockphoto.com/rabbit-toy-stock-photos_csp13945038.jpg",
@@ -44,8 +48,19 @@
           "price": 4.99,
           "rating": 4.3,
           "seller": "Bob Williams",
+          "subCategory":"Rabbit",
           "availableQuantity": 12,
-          "description": "A small catnip-filled mouse toy for cats to play with."
+          "description": "The rabbit toy is an adorable plush toy that resembles a fluffy and lovable bunny. With its long ears, soft fur, and charming features, the rabbit toy is incredibly huggable and delightful. It offers a sense of warmth and comfort, making it an ideal companion for children. Whether it's for pretend tea parties, imaginative adventures, or simply cuddling up, the rabbit toy adds a touch of whimsy and playfulness to any child's day."
+        },
+        {
+          "img": "https://cdn.w600.comps.canstockphoto.com/sweet-heart-rabbit-stock-photos_csp12131134.jpg",
+          "name": "Rabbit heart Toy",
+          "price": 4.99,
+          "rating": 4.3,
+          "seller": "Bob Williams",
+          "subCategory":"Rabbit",
+          "availableQuantity": 12,
+          "description": "The rabbit toy is an adorable plush toy that resembles a fluffy and lovable bunny. With its long ears, soft fur, and charming features, the rabbit toy is incredibly huggable and delightful. It offers a sense of warmth and comfort, making it an ideal companion for children. Whether it's for pretend tea parties, imaginative adventures, or simply cuddling up, the rabbit toy adds a touch of whimsy and playfulness to any child's day."
         },
       
         {
@@ -54,8 +69,9 @@
           "price": 14.99,
           "rating": 4.6,
           "seller": "Emily Davis",
+          "subCategory":"Teddy bear",
           "availableQuantity": 3,
-          "description": "A colorful swing toy for parrots to perch and play on."
+          "description": "The teddy bear toy is a classic and timeless favorite among children and collectors. It is a soft and plush toy bear, typically featuring a friendly face, soft fur, and cuddly body. The teddy bear has been a beloved companion for generations, providing comfort, security, and companionship. It is often given as a gift on special occasions and cherished for years to come."
         },
         {
           "img": "https://cdn.w600.comps.canstockphoto.com/furry-teddy-bear-picture_csp5460937.jpg",
@@ -63,8 +79,19 @@
           "price": 8.99,
           "rating": 4.1,
           "seller": "David Wilson",
+          "subCategory":"Teddy bear",
           "availableQuantity": 6,
-          "description": "A realistic canary toy that chirps when pressed."
+          "description": "The teddy bear toy is a classic and timeless favorite among children and collectors. It is a soft and plush toy bear, typically featuring a friendly face, soft fur, and cuddly body. The teddy bear has been a beloved companion for generations, providing comfort, security, and companionship. It is often given as a gift on special occasions and cherished for years to come."
+        },
+        {
+          "img": "https://cdn.w600.comps.canstockphoto.com/brown-teddy-bear-in-read-scarf-lying-in-stock-image_csp25086369.jpg",
+          "name": "Teddy Bear in red scarf ",
+          "price": 8.99,
+          "rating": 4.5,
+          "seller": "David Wilson",
+          "subCategory":"Teddy bear",
+          "availableQuantity": 8,
+          "description": "The teddy bear toy is a classic and timeless favorite among children and collectors. It is a soft and plush toy bear, typically featuring a friendly face, soft fur, and cuddly body. The teddy bear has been a beloved companion for generations, providing comfort, security, and companionship. It is often given as a gift on special occasions and cherished for years to come."
         }
       ]
     
