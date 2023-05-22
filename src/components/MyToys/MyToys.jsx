@@ -36,7 +36,7 @@ const MyToys = () => {
   };
 
   const handleConfirm = (id) => {
-    fetch(`http://localhost:5000/bookedToys${id}`, {
+    fetch(`https://toy-city-server.vercel.app/bookedToys${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -47,7 +47,14 @@ const MyToys = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          // update
+          // update status
+          const remaining = bookedToys.filter(
+            (bookedToy) => bookedToy.id !== id
+          );
+          const updated = bookedToys.find((bookedToy) => bookedToy._id === id);
+          updated.status = "confirm";
+          const newBookedToys = [updated, ...remaining];
+          setBookedToys(newBookedToys);
         }
       });
   };

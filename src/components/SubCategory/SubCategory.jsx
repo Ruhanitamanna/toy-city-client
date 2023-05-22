@@ -5,7 +5,7 @@ import "react-tabs/style/react-tabs.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
-import AuthProvider, { AuthContext } from "../Providers/AuthProviders";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const SubCategory = () => {
   const [toys, setToys] = useState([]);
@@ -14,7 +14,7 @@ const SubCategory = () => {
   //   console.log(user);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch("https://toy-city-server.vercel.app/toys")
       .then((res) => res.json())
       .then((data) => setToys(data))
       .catch((error) => console.error(error));

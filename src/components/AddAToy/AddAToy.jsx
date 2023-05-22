@@ -43,7 +43,7 @@ const AddAToy = () => {
     };
     console.log(order);
 
-    fetch("http://localhost:5000/bookedToys", {
+    fetch("https://toy-city-server.vercel.app/bookedToys", {
       method: "POST",
       headers: {
         "content-type": "application/json",

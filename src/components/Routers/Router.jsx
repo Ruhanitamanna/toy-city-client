@@ -8,6 +8,7 @@ import MyToys from "../MyToys/MyToys";
 import AddAToy from "../AddAToy/AddAToy";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AllToys from "../AllToys/AllToys";
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,8 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
-        path: "alltoys/:id",
-        element: <MyToys></MyToys>,
+        path: "/alltoys",
+        element: <AllToys></AllToys>,
       },
       {
         path: "/mytoys",
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
         path: "addatoy/:id",
         element: <AddAToy></AddAToy>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toys/${params.id}`),
+          fetch(`https://toy-city-server.vercel.app/toys/${params.id}`),
       },
       {
         path: "*",
