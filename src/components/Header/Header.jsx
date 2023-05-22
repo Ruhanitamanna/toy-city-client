@@ -20,10 +20,13 @@ const Header = () => {
       </li>
 
       <li>
-        <Link to="/addatoy">Add a toy</Link>
+        <Link to="addatoy/:id">Add a toy</Link>
       </li>
       {user?.email ? (
         <>
+          <li>
+            <Link to="/singleToy/:id">Toy details</Link>
+          </li>
           <li>
             <Link to="/mytoys">My Toys</Link>
           </li>

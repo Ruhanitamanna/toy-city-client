@@ -9,6 +9,9 @@ import AddAToy from "../AddAToy/AddAToy";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AllToys from "../AllToys/AllToys";
+import NotFoundLayout from "../notFoundLayout/notFoundLayout";
+import SingleToyDetails from "../SingleToyDetails/SingleToyDetails";
+// import NotFoundLayout from "../NotFoundLayout/NotFoundLayout";
 
 const router = createBrowserRouter([
   {
@@ -46,15 +49,33 @@ const router = createBrowserRouter([
       },
       {
         path: "addatoy/:id",
-        element: <AddAToy></AddAToy>,
+        element: (
+          <PrivateRoute>
+            <AddAToy></AddAToy>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(`https://toy-city-server.vercel.app/toys/${params.id}`),
       },
       {
-        path: "*",
-        element: <ErrorPage></ErrorPage>,
+        path: "singleToy/:id",
+        element: (
+          <PrivateRoute>
+            <SingleToyDetails></SingleToyDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`https://toy-city-server.vercel.app/toys/${params.id}`),
       },
     ],
+  },
+  {
+    path: "*",
+    element: (
+      <NotFoundLayout>
+        <ErrorPage></ErrorPage>,
+      </NotFoundLayout>
+    ),
   },
 ]);
 
