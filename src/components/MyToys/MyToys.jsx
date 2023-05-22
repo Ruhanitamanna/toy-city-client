@@ -7,7 +7,7 @@ import MyToysRow from "./MyToysRow";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [bookedToys, setBookedToys] = useState([]);
-  const url = `http://localhost:5000/bookedToys?email=${user?.email}`;
+  const url = `https://toy-city-server.vercel.app/bookedToys?email=${user?.email}`;
 
   useEffect(() => {
     fetch(url)
@@ -18,7 +18,7 @@ const MyToys = () => {
   const handleDelete = (id) => {
     const proceed = confirm("are you sure you want to delete");
     if (proceed) {
-      fetch(`http://localhost:5000/bookedToys${id}`, {
+      fetch(`https://toy-city-server.vercel.app/bookedToys${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
