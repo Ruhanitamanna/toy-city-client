@@ -58,7 +58,7 @@ const router = createBrowserRouter([
           fetch(`https://toy-city-server.vercel.app/toys/${params.id}`),
       },
       {
-        path: "singleToy/:id",
+        path: "/singleToy/:id",
         element: (
           <PrivateRoute>
             <SingleToyDetails></SingleToyDetails>

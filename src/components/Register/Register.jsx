@@ -11,7 +11,11 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name.email, password);
+
+    if (!email || !password) {
+      alert("Please provide both email and password.");
+      return;
+    }
 
     createUser(email, password)
       .then((result) => {
@@ -49,6 +53,7 @@ const Register = () => {
                   name="email"
                   placeholder="email"
                   className="input input-bordered"
+                  required
                 />
               </div>
 
@@ -61,6 +66,7 @@ const Register = () => {
                   name="password"
                   placeholder="password"
                   className="input input-bordered"
+                  required
                 />
               </div>
               <div className="form-control">

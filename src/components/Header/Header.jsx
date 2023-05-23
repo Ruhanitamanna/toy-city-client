@@ -24,9 +24,9 @@ const Header = () => {
       </li>
       {user?.email ? (
         <>
-          <li>
+          {/* <li>
             <Link to="/singleToy/:id">Toy details</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/mytoys">My Toys</Link>
           </li>
