@@ -1,8 +1,11 @@
-import React from "react";
-import { useLoaderData } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProviders";
 
 const SingleToyDetails = () => {
   const toy = useLoaderData();
+
+  const { user } = useContext(AuthContext);
 
   const {
     name,
@@ -15,28 +18,26 @@ const SingleToyDetails = () => {
     availableQuantity,
     description,
   } = toy;
+
   return (
     <div>
-      {/* The button to open modal */}
-      <label htmlFor="my-modal-6" className="btn">
-        open modal
-      </label>
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <figure>
+          <img src={img} alt="Shoes" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">{name}!</h2>
+          <p>{seller}</p>
+          <p>{price}</p>
+          <p>{rating}</p>
+          <p>{subCategory}</p>
+          <p>{availableQuantity}</p>
+          <p>{description}</p>
 
-      {/* Put this part before </body> tag */}
-      <input type="checkbox" id="my-modal-6" className="modal-toggle" />
-      <div className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">
-            Congratulations random Internet user!
-          </h3>
-          <p className="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
-          <div className="modal-action">
-            <label htmlFor="my-modal-6" className="btn">
-              Yay!
-            </label>
+          <div className="card-actions justify-end">
+            <Link to={`/addatoy/${_id}`}>
+              <button className="btn btn-secondary">Buy Now</button>
+            </Link>
           </div>
         </div>
       </div>
