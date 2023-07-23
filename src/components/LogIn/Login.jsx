@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
@@ -6,6 +6,7 @@ import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -14,9 +15,11 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         const user = result.user;
+
         console.log(user);
       })
       .catch((error) => console.log(error));
+    navigate("/");
   };
 
   const handleGoogleSignIn = (event) => {
@@ -65,27 +68,32 @@ const Login = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <Link to="/">
-                  <button className="btn btn-primary">Login</button>
-                </Link>
+                <div className="form-control mt-6">
+                  <input className="btn btn-primary" type="submit" />
+                </div>
+                {/* <Link to="/">
+                  <button type="submit" className="btn btn-primary">
+                    Login
+                  </button>
+                </Link> */}
                 <br />
-
-                <button
-                  onClick={handleGoogleSignIn}
-                  className="btn btn-outline btn-accent"
-                >
-                  <FaGoogle /> SIgn in with Google
-                </button>
-                <br />
-                <p>
-                  New here?{" "}
-                  <Link to="/register">
-                    <span className="text-primary">Register</span>
-                  </Link>{" "}
-                  first
-                </p>
               </div>
             </form>
+
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn btn-outline btn-accent"
+            >
+              <FaGoogle /> SIgn in with Google
+            </button>
+            <br />
+            <p>
+              New here?{" "}
+              <Link to="/register">
+                <span className="text-primary">Register</span>
+              </Link>{" "}
+              first
+            </p>
           </div>
         </div>
       </div>

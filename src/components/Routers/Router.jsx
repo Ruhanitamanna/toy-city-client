@@ -11,6 +11,7 @@ import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AllToys from "../AllToys/AllToys";
 import NotFoundLayout from "../notFoundLayout/notFoundLayout";
 import SingleToyDetails from "../SingleToyDetails/SingleToyDetails";
+import UpdateToy from "../MyToys/UpdateToy";
 // import NotFoundLayout from "../NotFoundLayout/NotFoundLayout";
 
 const router = createBrowserRouter([
@@ -48,14 +49,18 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/addatoy/:id",
+        path: "/addatoy/:id?",
         element: (
           <PrivateRoute>
             <AddAToy></AddAToy>
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://toy-city-server.vercel.app/toys/${params.id}`),
+          fetch(
+            `https://toy-city-server.vercel.app/toys/${
+              params.id ? params.id : ""
+            }`
+          ),
       },
       {
         path: "/singleToy/:id",
@@ -65,7 +70,13 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://toy-city-server.vercel.app/toys/${params.id}`),
+          fetch(`https://toy-city-server.vercel.app/bookedToy/${params.id}`),
+      },
+      {
+        path: "/updateToy/:id",
+        element: <UpdateToy></UpdateToy>,
+        loader: ({ params }) =>
+          fetch(`https://toy-city-server.vercel.app/bookedToy/${params.id}`),
       },
     ],
   },

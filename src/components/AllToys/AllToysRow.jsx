@@ -35,7 +35,7 @@ const AllToysRow = ({ bookedToy }) => {
       <td>{AvailableQuantity}</td>
       <td>
         {user ? (
-          <Link to={`/singleToy/:${_id}`}>
+          <Link to={`/singleToy/${_id}`}>
             <button className="btn btn-secondary">View Details</button>
           </Link>
         ) : (

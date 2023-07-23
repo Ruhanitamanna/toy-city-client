@@ -48,7 +48,7 @@ const SubCategory = () => {
                     <h2 className="card-title">{toy.name}</h2>
                     <p>price: ${toy.price}</p>
                     <div className="card-actions">
-                      <Link to={`/singleToy/${toy._id}`}>
+                      <Link to={`/addatoy/${toy._id}`}>
                         <button
                           className="btn btn-secondary"
                           onClick={() => {
@@ -60,7 +60,7 @@ const SubCategory = () => {
                             }
                           }}
                         >
-                          View Details
+                          Add Now
                         </button>
                         <ToastContainer />
                       </Link>
@@ -84,10 +84,8 @@ const SubCategory = () => {
                     <h2 className="card-title">{toy.name}</h2>
                     <p>price: ${toy.price}</p>
                     <div className="card-actions">
-                      <Link to={`/singleToy/${toy._id}`}>
-                        <button className="btn btn-secondary">
-                          View Details
-                        </button>
+                      <Link to={`/addatoy/${toy._id}`}>
+                        <button className="btn btn-secondary">Add Now</button>
                       </Link>
                     </div>
                   </div>
@@ -110,10 +108,8 @@ const SubCategory = () => {
                     <p>price: ${toy.price}</p>
                     <p>Ratings: {toy.rating}</p>
                     <div className="card-actions">
-                      <Link to={`/singleToy/${toy._id}`}>
-                        <button className="btn btn-secondary">
-                          View Details
-                        </button>
+                      <Link to={`/addatoy/${toy._id}`}>
+                        <button className="btn btn-secondary">Add Now</button>
                       </Link>
                     </div>
                   </div>

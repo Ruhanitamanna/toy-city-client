@@ -1,88 +1,83 @@
 import React, { useContext } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProviders";
 
-const AddAToy = () => {
+const UpdateToy = () => {
   const toy = useLoaderData();
+  const { user } = useContext(AuthContext);
   const {
-    name,
     _id,
+    toyName,
     img,
     price,
     rating,
-    seller,
-    subCategory,
+    sellerName,
+    category,
     availableQuantity,
     description,
   } = toy;
   console.log(toy);
-
-  const { user } = useContext(AuthContext);
-  const handleAddAToy = (event) => {
+  const handleUpdateToy = (event) => {
     event.preventDefault();
 
     const form = event.target;
     const name = form.name.value;
     const email = user?.email;
     const sellerName = form.seller.value;
-    const subCategory = form.category.value;
+    const category = form.category.value;
     const price = form.price.value;
     const rating = form.rating.value;
     const availableQuantity = form.available.value;
     const description = form.description.value;
-    const order = {
-      sellername: sellerName,
+    const updatedToy = {
+      sellerName: sellerName,
       email,
       img,
       toyName: name,
-      category: subCategory,
+      category: category,
       price: price,
       rating: rating,
-      AvailableQuantity: availableQuantity,
+      availableQuantity: availableQuantity,
       description: description,
       toy: _id,
     };
-    console.log(order);
+    console.log(updatedToy);
 
-    fetch("https://toy-city-server.vercel.app/bookedToys", {
-      method: "POST",
+    fetch(`https://toy-city-server.vercel.app/bookedToys/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(order),
+      body: JSON.stringify(updatedToy),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
-          alert("Toy added successfully");
+        if (data.modifiedCount > 0) {
+          alert("Toy updated successfully");
         }
       })
       .catch((error) => console.log(error));
-    // if (data.insertedId) {
-    //   alert("toy added successfully");
-    // }
   };
-
   return (
     <div className="p-6">
       <div className="text-center">
         {" "}
-        <h1 className="text-4xl font-bold">Add this to your collection</h1>
-        <div className="ml-6">
-          <img className="w-12 h-14" src={img} alt="" />
-        </div>
+        <h1 className="text-4xl font-bold">Update This Toy</h1>
       </div>
-      <form onSubmit={handleAddAToy}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+      <div className="m-2 p-2">
+        <img className="mx-auto w-28" src={img} alt="" />
+      </div>
+      <form onSubmit={handleUpdateToy}>
+        <div className="grid grid-cols-1  md:grid-cols-2 gap-6 p-6">
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Name</span>
+              <span className="label-text">toyName</span>
             </label>
             <input
               type="text"
               name="name"
-              defaultValue={name}
+              defaultValue={toyName}
               className="input input-bordered"
             />
           </div>
@@ -93,7 +88,7 @@ const AddAToy = () => {
             <input
               type="text"
               name="seller"
-              defaultValue={user?.displayName}
+              defaultValue={sellerName}
               className="input input-bordered"
             />
           </div>
@@ -115,7 +110,7 @@ const AddAToy = () => {
             <input
               type="text"
               name="category"
-              defaultValue={subCategory}
+              defaultValue={category}
               className="input input-bordered"
             />
           </div>
@@ -168,7 +163,7 @@ const AddAToy = () => {
           <input
             className="btn btn-secondary btn-block"
             type="submit"
-            value="Add toy"
+            value="Update"
           />
         </div>
       </form>
@@ -176,4 +171,4 @@ const AddAToy = () => {
   );
 };
 
-export default AddAToy;
+export default UpdateToy;

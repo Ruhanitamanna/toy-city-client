@@ -4,6 +4,7 @@ import { AuthContext } from "../Providers/AuthProviders";
 
 const SingleToyDetails = () => {
   const toy = useLoaderData();
+  console.log(toy);
 
   const { user } = useContext(AuthContext);
 
@@ -21,12 +22,17 @@ const SingleToyDetails = () => {
 
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold uppercase">Toy Details</h1>
+      </div>
+      <div className="card w-96 bg-base-100 shadow-xl mx-auto mt-8">
         <figure>
           <img src={img} alt="Shoes" />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{name}!</h2>
+          <h2 className="card-title">{name}</h2>
+          <p>{user?.email}</p>
+          <p>{user?.name}</p>
           <p>{seller}</p>
           <p>{price}</p>
           <p>{rating}</p>

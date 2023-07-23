@@ -20,20 +20,33 @@ const Header = () => {
       </li>
 
       <li>
-        <Link to="addatoy/:id">Add a toy</Link>
+        <Link to={"/addatoy"}>Add a toy</Link>
       </li>
       {user?.email ? (
         <>
-          {/* <li>
-            <Link to="/singleToy/:id">Toy details</Link>
-          </li> */}
           <li>
             <Link to="/mytoys">My Toys</Link>
           </li>
           <button onClick={handleLogout}>Log out</button>
+
+          <div className="avatar">
+            <div className="w-5 h-5 p-2 m-4 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <img src={user.photoURL} />
+            </div>
+          </div>
+
+          {user.photoURL && (
+            <img
+              className="w-10 h-10 rounded-full"
+              src={user.photoURL}
+              alt="User Profile"
+            />
+          )}
         </>
       ) : (
-        <Link to="/login">Log in</Link>
+        <li>
+          <Link to="/login">Log in</Link>
+        </li>
       )}
     </>
   );
